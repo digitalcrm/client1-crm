@@ -3,15 +3,15 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Auth;
-use Illuminate\Support\Facades\DB;
-
-//  Models
 use App\User;
 use App\Admin;
-use App\Tbl_Admin_Permissions;
-use App\Tbl_Permissions;
+
+//  Models
 use App\Tbl_features;
+use App\Tbl_Permissions;
+use App\Tbl_Admin_Permissions;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class TestMiddleware
 {
@@ -30,7 +30,7 @@ class TestMiddleware
         $admin_id = Auth::user()->id;
         $user_status = Auth::user()->user_status;
 
-
+        // dd($user_status);
         if (($user_status == 0) || ($user_status == 1)) {
 
             $feature = Tbl_features::where($permit, 1)->where('uid', $admin_id)->first();

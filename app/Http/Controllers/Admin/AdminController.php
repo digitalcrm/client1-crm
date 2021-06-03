@@ -745,6 +745,7 @@ class AdminController extends Controller
             'email' => $request->input('email'),
             'password' => Hash::make($request->input('userpass')),
             'user_type' => 3,
+            'user_status' => 3,
             'cr_id' => $currency->cr_id,
         );
 
