@@ -861,7 +861,7 @@ class AdminController extends Controller
 
         $pt = array();
 
-        if (count($permits) > 0) {
+        if (($permits != null) && (count($permits) >0) ) {
 
 
             foreach ($permits as $permit) {
